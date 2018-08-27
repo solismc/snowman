@@ -25,14 +25,14 @@ class App extends Component {
     // we are checking each letter in the secret, to see if it was chosen 
     // this will create a new displayLetters(will be inserted into state)
     const _newDisplayLetters = this.state.secret.split("").map((l, i) => {
-      if (l === letter) {
+      if (l === letter) { //if letter is there or has already been selected, it needs to be displayed//
         return l;
       } else {
         return "_";
       }
     });
 
-    
+
     this.setState({
       pickedLetters: _newPickedLetters,
       displayLetters: _newDisplayLetters
