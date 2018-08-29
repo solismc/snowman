@@ -57,11 +57,11 @@ class App extends Component {
 
         <h1>SECRET WORD</h1>
         <section className="Snowman-board">
-          <ul>
+          <div>
             {this.state.displayLetters.map((letter, i) => {
               return <li key={i}>{letter}</li>;
             })}
-          </ul>
+          </div>
         </section>
       </div>
     );

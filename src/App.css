@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  font-size: 26px;
+  font-size: 2em;
 }
 
 .App-logo {
@@ -28,9 +30,14 @@
   to { transform: rotate(360deg); }
 }
 
-.Snowman-board {
+.Snowman-board>div {
   display: flex;
-  flex-direction: column;
-  list-style-type: none;
-  
+  justify-content: center;
+  list-style: none;
+  font-size: 26px;
+  margin: 0em;
+}
+
+.Snowman-board>div>li {
+  margin: 1em;
 }
