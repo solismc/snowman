@@ -21,11 +21,12 @@ class App extends Component {
     const _newPickedLetters = this.state.pickedLetters.slice();
     _newPickedLetters.push(letter);
     console.log(_newPickedLetters);
+    this.setState({
+      pickedLetters: _newPickedLetters
+    })
 
-    // we are checking each letter in the secret, to see if it was chosen 
-    // this will create a new displayLetters(will be inserted into state)
     const _newDisplayLetters = this.state.secret.split("").map((l, i) => {
-      if (l === letter) { //if letter is there or has already been selected, it needs to be displayed//
+      if (_newPickedLetters.includes(l) ) { 
         return l;
       } else {
         return "_";
@@ -55,10 +56,7 @@ class App extends Component {
         })}
 
         <h1>SECRET WORD</h1>
-        {this.state.pickedLetters.map((letter, i) => {
-          return <div key={i}>{letter}</div>;
-        })}
-        <section>
+        <section className="Snowman-board">
           <ul>
             {this.state.displayLetters.map((letter, i) => {
               return <li key={i}>{letter}</li>;
